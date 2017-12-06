@@ -23,12 +23,21 @@ import cz.msebera.android.httpclient.Header;
 
 public class FarmerRequestPickupChooseTransporter extends AppCompatActivity {
 
+    ListView bestMatch;
     ListView lst;
     ArrayList<Transporter> trans = new ArrayList<Transporter>();
     String[] transportername={"Juan Felipe","Ricardo Sanchez-Delorio","Davíd de Leon"};
     String[] times={"1996 Toyota Tacoma","2002 Nissan Navara","2000 Agrale Marrua"};
     String[] locations ={"Cartagena", "Cúcuta", "Santa Marta"};
     Integer[] imgid ={R.drawable.arka,R.drawable.cecilia,R.drawable.raza};
+    String[] btransportername={transportername[0]};
+    String[] btimes={times[0]};
+    String[] blocations ={locations[0]};
+    Integer[] bimgid ={imgid[0]};
+    String[] otransportername=Arrays.copyOfRange(transportername,1,transportername.length);
+    String[] otimes=Arrays.copyOfRange(times,1,times.length);
+    String[] olocations =Arrays.copyOfRange(locations,1,locations.length);
+    Integer[] oimgid =Arrays.copyOfRange(imgid,1,imgid.length);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +69,16 @@ public class FarmerRequestPickupChooseTransporter extends AppCompatActivity {
             ind++;
         }
 
+        bestMatch = findViewById(R.id.bestMatchListView);
+        FarmerRequestPickupChooseTransporterCustomListView bcustomListview
+                = new FarmerRequestPickupChooseTransporterCustomListView(this,btransportername,btimes,bimgid,blocations);
+        bestMatch.setAdapter(bcustomListview);
+
+
         lst= findViewById(R.id.listview);
-        FarmerRequestPickupChooseTransporterCustomListView customListview = new FarmerRequestPickupChooseTransporterCustomListView(this,transportername,times,imgid);
-        lst.setAdapter(customListview);
+        FarmerRequestPickupChooseTransporterCustomListView ocustomListview
+                = new FarmerRequestPickupChooseTransporterCustomListView(this,otransportername,otimes,oimgid,olocations);
+        lst.setAdapter(ocustomListview);
 
 
         final Button button = findViewById(R.id.farmerRequestPickupChooseTransporterNextButton);

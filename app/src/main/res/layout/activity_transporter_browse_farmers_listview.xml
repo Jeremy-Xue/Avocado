@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#f2ffe6">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ffe6">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@ android:background="#f2ffe6">
             />
 
         <TextView
-            android:id="@+id/transporterName"
+            android:id="@+id/transportername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -29,31 +30,34 @@ android:background="#f2ffe6">
             android:textColor="#264d00"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:paddingLeft="10dp"
+            android:paddingLeft="8dp"
             />
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageView"
-            android:layout_below="@+id/transporterName"
-            android:layout_weight="1"
-            android:paddingLeft="10dp"
-            android:textColor="#408000"
-            android:textSize="15sp" />
+
 
         <TextView
-            android:id="@+id/transporterLocation"
+            android:id="@+id/detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/time"
             android:layout_toEndOf="@+id/imageView"
             android:layout_toRightOf="@+id/imageView"
             android:layout_weight="1"
-            android:paddingLeft="10dp"
+            android:paddingLeft="8dp"
             android:textColor="#408000"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/locationfrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:textColor="#408000"
+            android:textSize="13sp" />
 
     </RelativeLayout>
 </LinearLayout>
